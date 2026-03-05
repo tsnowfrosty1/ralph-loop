@@ -1,0 +1,14 @@
+# Logs (large, per-run output)
+logs/
+
+# Runtime state
+*.tmp
+overnight.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

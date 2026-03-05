@@ -1,0 +1,26 @@
+{
+  "database_id": "6501aa069a524b52a4bf9c57a4d70d75",
+  "data_source_id": "8d78cf5a-d55a-4ded-8be4-08f88e250f9d",
+  "database_url": "https://www.notion.so/6501aa069a524b52a4bf9c57a4d70d75",
+  "data_source_url": "collection://8d78cf5a-d55a-4ded-8be4-08f88e250f9d",
+  "field_mapping": {
+    "task_id": "Task ID",
+    "task_name": "Task",
+    "status": "Status",
+    "priority": "Priority",
+    "type": "Type",
+    "project": "Project",
+    "description": "Description",
+    "repo_url": "Repo URL",
+    "branch": "Branch",
+    "attempt_count": "Attempts",
+    "max_attempts": "Max Attempts",
+    "direct_commit": "Direct Commit",
+    "error_log": "Error Log",
+    "pr_url": "PR URL",
+    "cost_usd": "Cost USD",
+    "assigned_run": "Assigned Run",
+    "completed_at": "Completed At"
+  },
+  "notes": "Two-way sync between this Notion DB and local tasks.json. Use Cowork Notion MCP tools to sync. data_source_url is used for SQL queries, data_source_id for creating pages."
+}

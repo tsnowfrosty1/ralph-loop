@@ -1,0 +1,48 @@
+# Ralph Loop Configuration
+# Autonomous overnight agent for Claude Code tasks
+
+# ─── Project Definitions ───────────────────────────────────────────
+projects:
+  front-door-mcp:
+    repo: "https://github.com/tsnowfrosty1/talent-front-door-mcp"
+    branch: main
+    notion_database_id: "3e1e5bd09d4248119b37e58d8e9502c4"
+    notion_data_source_id: "34f0a2a1-fe41-4451-a141-9be55e58ab65"
+    clone_dir: "../talent-front-door"
+    max_budget_per_task: 10.00
+    max_turns_per_task: 50
+    allowed_tools: "Bash,Read,Edit,Write,Glob,Grep"
+    test_command: "npm run test"
+
+  workday-mcp:
+    repo: "https://github.com/tsnowfrosty1/workday-mcp"
+    branch: main
+    notion_database_id: "3e1e5bd09d4248119b37e58d8e9502c4"
+    notion_data_source_id: "34f0a2a1-fe41-4451-a141-9be55e58ab65"
+    clone_dir: "../workday-mcp"
+    max_budget_per_task: 10.00
+    max_turns_per_task: 50
+    allowed_tools: "Bash,Read,Edit,Write,Glob,Grep"
+    test_command: "npm run test"
+
+# ─── Global Settings ───────────────────────────────────────────────
+global:
+  max_iterations: 20              # Max times the loop cycles through remaining tasks
+  max_budget_per_run: 100.00      # Stop the entire run if cumulative cost exceeds this
+  max_consecutive_failures: 3     # Pause if N tasks fail in a row
+  default_retry_attempts: 2       # Per-task retry limit (overridable per task in Notion)
+  log_dir: "./logs"
+  repos_dir: "./repos"
+
+# ─── Claude Code CLI Defaults ──────────────────────────────────────
+claude:
+  output_format: "json"
+  verbose: true
+  sandbox_enabled: false
+  teammate_mode: "tmux"
+
+# ─── Notion Integration ───────────────────────────────────────────
+notion:
+  # Set NOTION_API_KEY env var before running
+  api_base: "https://api.notion.com/v1"
+  api_version: "2022-06-28"
